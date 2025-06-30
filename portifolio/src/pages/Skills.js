@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 const skillsData = [
   { id: 'git', name: 'Git', description: 'Controle de versão e fluxo Git Flow.', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
-    { id: 'problemas', name: 'Resolução de problemas', description: 'Diagnóstico e solução rápida de incidentes.', logo: 'https://cdn-icons-png.flaticon.com/512/3889/3889779.png' },
+  { id: 'problemas', name: 'Resolução de problemas', description: 'Diagnóstico e solução rápida de incidentes.', logo: 'https://cdn-icons-png.flaticon.com/512/3889/3889779.png' },
   { id: 'api_rest', name: 'APIs REST', description: 'Design e consumo de APIs RESTful.', logo: 'https://cdn-icons-png.flaticon.com/512/103/103093.png' },
   { id: 'soap', name: 'SOAP / SoapUI', description: 'Integrações e serviços SOAP/XML.', logo: 'https://static1.smartbear.co/smartbearbrand/media/images/home/soapui-icon.svg' },
   { id: 'spring', name: 'Spring Boot', description: 'Microsserviços, segurança e integrações.', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
