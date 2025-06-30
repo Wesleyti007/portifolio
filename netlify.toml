@@ -1,7 +1,7 @@
 [build]
-  base = "/"
-  publish = "build"
-  command = "npm run build"
+  base = "portifolio"
+  publish = "portifolio/build"
+  command = "cd portifolio && npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
