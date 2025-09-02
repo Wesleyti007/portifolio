@@ -35,7 +35,7 @@ const Skills = () => {
   }, [totalPages]);
 
   return (
-    <Box sx={{ minHeight: '100vh', background: 'linear-gradient(135deg,#7158e2 0%,#4e9df1 100%)', display: 'flex', alignItems: 'center', color: 'common.white' }}>
+    <Box sx={{ minHeight: '100vh', background: 'linear-gradient(135deg,rgba(72, 121, 104, 0.85) 0%,rgb(71, 127, 148) 100%)', display: 'flex', alignItems: 'center', color: 'common.white' }}>
       <Container sx={{ py: 8 }}>
         <Typography variant="h4" gutterBottom>
           Minhas Skills

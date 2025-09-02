@@ -9,7 +9,7 @@ const Home = () => {
       minHeight: '100vh',
       display: 'flex',
       alignItems: 'center',
-      background: 'linear-gradient(135deg, #7158e2 0%, #4e9df1 100%)',
+      background: 'linear-gradient(135deg,rgba(72, 121, 104, 0.85) 0%,rgb(71, 127, 148) 100%)',
       color: 'common.white',
     }}>
       <Container>

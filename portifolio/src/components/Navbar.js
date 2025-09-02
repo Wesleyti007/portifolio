@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { AppBar, Toolbar, Button, Box, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -50,14 +50,7 @@ const Navbar = () => {
         }}
       >
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', minHeight: 100 }}>
-        <Box component={NavLink} to="/" sx={{ display: 'flex', alignItems: 'center', gap: 1, ...linkStyle, fontSize: '1.5rem', fontWeight: 700 }}>
-            <Box component="img" src="/logo.png" alt="logo" sx={{ height: 80, filter: 'invert(1)' }} />
-            
-            <Typography variant="h6" sx={{ fontWeight: 700, fontFamily: 'Poppins, Inter, sans-serif', letterSpacing: 1 }}>
-              WSTI
-            </Typography>
-          </Box>
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2, ml: 4 }}>
+        <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 4, ml: 'auto' }}>
           {navItems.map(({ label, path }) => (
             <Button key={path} component={NavLink} to={path} sx={linkStyle} end={path === '/'}>
               {label}
