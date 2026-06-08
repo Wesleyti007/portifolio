@@ -1,14 +1,16 @@
-import { Container, Typography, Box, Grid, Card, CardContent, Divider } from '@mui/material';
-
-const experience = [
-  { period: 'Jan 2022 – Atual', title: 'Desenvolvedor Full Stack Java Jr (PJ)', company: 'COINFO LTDA', location: 'São Paulo – SP' },
-  { period: 'Fev 2021 – Dez 2021', title: 'Trainee TI (PJ)', company: 'COINFO LTDA', location: 'São Paulo – SP' },
-  { period: 'Jan 2020 – Jan 2021', title: 'Estagiário (Progress)', company: 'COINFO LTDA', location: 'São Paulo – SP' },
-  { period: 'Mar 2014 – Fev 2020', title: 'Soldado', company: '2º Batalhão de Polícia do Exército', location: 'São Paulo – SP' },
-];
+import { Typography, Box, Grid, Card, CardContent } from '@mui/material';
+import PageSection from '../components/PageSection';
+import SectionHeader from '../components/SectionHeader';
+import CareerTimeline from '../components/CareerTimeline';
+import { glassCardSx } from '../constants';
 
 const education = [
-  { period: '2017 – 2020', course: 'Bacharelado em Sistemas de Informação', institution: 'Centro Universitário das Américas', location: 'São Paulo – SP' },
+  {
+    period: '2017 – 2020',
+    course: 'Bacharelado em Sistemas de Informação',
+    institution: 'Centro Universitário das Américas',
+    location: 'São Paulo – SP',
+  },
 ];
 
 const courses = [
@@ -21,65 +23,84 @@ const courses = [
 
 const About = () => {
   return (
-    <Box sx={{ minHeight: '100vh', background: 'linear-gradient(135deg,rgba(72, 121, 104, 0.85) 0%,rgb(71, 127, 148) 100%)', color: 'common.white', display: 'flex', alignItems: 'center' }}>
-      <Container sx={{ py: 8 }}>
-        <Grid container spacing={4}>
-          <Grid item xs={12}>
-            <Card sx={{ p: { xs: 3, md: 6 }, background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', borderRadius: 3 }}>
-              <CardContent>
-                <Typography variant="h5" gutterBottom>Sobre Mim</Typography>
-                <Typography variant="body2" sx={{ color: 'common.white', textAlign: 'justify' }}>
-                  Sou desenvolvedor de software com experiência em criar soluções robustas e eficientes para backend e frontend. Tenho conhecimento sólido em Java e Spring Boot, além de familiaridade com JavaScript e Flutter.
-                  <br /><br />
-                  Com experiência em APIs REST e SOAP, PostgreSQL e SQL, desenvolvo aplicações escaláveis e de alto desempenho. Atuo no levantamento de requisitos, análise de negócios e resolução de problemas complexos.
-                  <br /><br />
-                  Tenho vivência com Git, JQuery, Node.js e Jasper Reports. Recentemente explorei integrações com a API da OpenAI, mostrando minha busca constante por inovação.
-                </Typography>
+    <PageSection centered={false}>
+      <SectionHeader
+        className="animate-fade-in-up"
+        eyebrow="Perfil"
+        title="Sobre Mim"
+        subtitle="Desenvolvedor pleno com trajetória que une disciplina, empreendedorismo e engenharia de software."
+      />
 
-                <Divider sx={{ my: 4, borderColor: 'rgba(255,255,255,0.3)' }} />
-
-                <Typography variant="h6" sx={{ color: '#4e9df1', fontWeight: 600 }} gutterBottom>
-                  Experiência Profissional
-                </Typography>
-                {experience.map((item, idx) => (
-                  <Box key={idx} sx={{ mb: 2 }}>
-                    <Typography sx={{ color: '#4e9df1', fontWeight: 600 }}>{item.title}</Typography>
-                    <Typography variant="body2" sx={{ color: 'common.white' }}>
-                      {item.company} — {item.location} <br /> {item.period}
-                    </Typography>
-                  </Box>
-                ))}
-
-                <Divider sx={{ my: 4, borderColor: 'rgba(255,255,255,0.3)' }} />
-
-                <Typography variant="h6" sx={{ color: '#4e9df1', fontWeight: 600 }} gutterBottom>
-                  Formação Acadêmica
-                </Typography>
-                {education.map((item, idx) => (
-                  <Box key={idx} sx={{ mb: 2 }}>
-                    <Typography sx={{ color: '#4e9df1', fontWeight: 600 }}>{item.course}</Typography>
-                    <Typography variant="body2" sx={{ color: 'common.white' }}>
-                      {item.institution} — {item.location} <br /> {item.period}
-                    </Typography>
-                  </Box>
-                ))}
-
-                <Divider sx={{ my: 4, borderColor: 'rgba(255,255,255,0.3)' }} />
-
-                <Typography variant="h6" sx={{ color: '#4e9df1', fontWeight: 600 }} gutterBottom>
-                  Cursos & Certificações
-                </Typography>
-                <Box component="ul" sx={{ pl: 0, listStyle: 'none', color: 'common.white', mb: 0 }}>
-                  {courses.map(course => (
-                    <Box key={course} component="li" sx={{ mb: 1 }}>{course}</Box>
-                  ))}
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
+      <Grid container spacing={{ xs: 3, md: 4 }}>
+        <Grid item xs={12}>
+          <Card className="animate-fade-in-up-delay-1" sx={{ p: { xs: 2.5, sm: 3, md: 4 }, ...glassCardSx }}>
+            <CardContent sx={{ p: { xs: 0, sm: '0 !important' } }}>
+              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                Sou desenvolvedor de software pleno com experiência em criar soluções robustas e eficientes para backend e frontend. Tenho conhecimento sólido em Java e Spring Boot, além de familiaridade com JavaScript e Flutter.
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8, mt: 2 }}>
+                Com experiência em APIs REST e SOAP, PostgreSQL e SQL, desenvolvo aplicações escaláveis e de alto desempenho. Atuo no levantamento de requisitos, análise de negócios e resolução de problemas complexos.
+              </Typography>
+              <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8, mt: 2 }}>
+                Tenho vivência com Git, JQuery, Node.js e Jasper Reports. Recentemente explorei integrações com a API da OpenAI, mostrando minha busca constante por inovação.
+              </Typography>
+            </CardContent>
+          </Card>
         </Grid>
-      </Container>
-    </Box>
+
+        <Grid item xs={12}>
+          <Box className="animate-fade-in-up-delay-2">
+            <Typography variant="h5" color="secondary" sx={{ fontWeight: 700, mb: 1 }}>
+              Trajetória Profissional
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'text.secondary', mb: 3, maxWidth: 720 }}>
+              Da área militar ao empreendedorismo e, hoje, ao desenvolvimento de software em produção.
+            </Typography>
+            <CareerTimeline />
+          </Box>
+        </Grid>
+
+        <Grid item xs={12} md={6}>
+          <Card className="animate-fade-in-up-delay-3" sx={{ p: { xs: 2.5, md: 3 }, height: '100%', ...glassCardSx }}>
+            <CardContent sx={{ p: { xs: 0, sm: '0 !important' } }}>
+              <Typography variant="h6" color="secondary" sx={{ fontWeight: 700, mb: 2 }}>
+                Formação Acadêmica
+              </Typography>
+              {education.map((item) => (
+                <Box key={item.course}>
+                  <Typography color="secondary" sx={{ fontWeight: 600, mb: 0.5 }}>
+                    {item.course}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    {item.institution} — {item.location}
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: 'text.secondary', mt: 0.5 }}>
+                    {item.period}
+                  </Typography>
+                </Box>
+              ))}
+            </CardContent>
+          </Card>
+        </Grid>
+
+        <Grid item xs={12} md={6}>
+          <Card className="animate-fade-in-up-delay-3" sx={{ p: { xs: 2.5, md: 3 }, height: '100%', ...glassCardSx }}>
+            <CardContent sx={{ p: { xs: 0, sm: '0 !important' } }}>
+              <Typography variant="h6" color="secondary" sx={{ fontWeight: 700, mb: 2 }}>
+                Cursos & Certificações
+              </Typography>
+              <Box component="ul" sx={{ m: 0, pl: 2.5, color: 'text.secondary' }}>
+                {courses.map((course) => (
+                  <Typography key={course} component="li" variant="body2" sx={{ mb: 1, lineHeight: 1.6 }}>
+                    {course}
+                  </Typography>
+                ))}
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+    </PageSection>
   );
 };
 

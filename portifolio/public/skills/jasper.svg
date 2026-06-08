@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Jasper Reports">
+  <rect width="64" height="64" rx="14" fill="#d73a35"/>
+  <path fill="#ffffff" d="M18 16h28a2 2 0 0 1 2 2v28a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V18a2 2 0 0 1 2-2zm4 8h20v3H22v-3zm0 8h16v3H22v-3zm0 8h12v3H22v-3z"/>
+  <path fill="#ffffff" d="M40 36l6 8h-5l-3-4-3 4h-5l6-8 2-2 2 2z" opacity="0.95"/>
+</svg>

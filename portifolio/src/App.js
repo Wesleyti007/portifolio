@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import About from './pages/About';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
@@ -10,11 +11,12 @@ import Contact from './pages/Contact';
 function App() {
   return (
     <Router>
-      <div className="App flex flex-col min-h-screen">
+      <div className="App">
         <Navbar />
-        <main className="flex-grow">
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/sobre" element={<About />} />
             <Route path="/projetos" element={<Projects />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/contato" element={<Contact />} />

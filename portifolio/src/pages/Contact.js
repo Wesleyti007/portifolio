@@ -1,64 +1,139 @@
-import { Container, Typography, Box, Grid, Paper, Link, IconButton } from '@mui/material';
+import { Typography, Grid, Paper, Link, IconButton, Stack } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import PageSection from '../components/PageSection';
+import SectionHeader from '../components/SectionHeader';
+import { colors, glassPanelSx, cardHoverSx } from '../constants';
+
+const contactItems = [
+  {
+    id: 'email',
+    icon: EmailIcon,
+    title: 'E-mail',
+    href: 'mailto:Wesley.ti07@gmail.com',
+    label: 'Enviar e-mail',
+    external: false,
+  },
+  {
+    id: 'linkedin',
+    icon: LinkedInIcon,
+    title: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/wesley-santos-515b73152/',
+    label: 'Ver perfil',
+    external: true,
+  },
+  {
+    id: 'github',
+    icon: GitHubIcon,
+    title: 'GitHub',
+    href: 'https://github.com/Wesleyti007',
+    label: 'Ver repositórios',
+    external: true,
+  },
+  {
+    id: 'phone',
+    icon: PhoneIcon,
+    title: 'Telefone',
+    href: 'tel:+5511957620875',
+    label: '(11) 95762-0875',
+    external: false,
+    secondary: {
+      icon: WhatsAppIcon,
+      href: 'https://wa.me/5511957620875',
+      label: 'WhatsApp',
+    },
+  },
+];
 
 const Contact = () => {
-
   return (
-    <Box sx={{ minHeight: '100vh', background: 'linear-gradient(135deg,rgba(72, 121, 104, 0.85) 0%,rgb(71, 127, 148) 100%)', display: 'flex', alignItems: 'center', color: 'common.white' }}>
-      <Container sx={{ py: 8, maxWidth: 600 }}>
-        <Typography variant="h4" gutterBottom>
-          Entre em Contato
-        </Typography>
-        <Grid container spacing={4} sx={{ mt: 4 }}>
-          <Grid item xs={12} md={4}>
-            <Paper elevation={0} sx={{ p: 4, background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(6px)', textAlign: 'center', borderRadius: 3 }}>
-              <IconButton href="mailto:Wesley.ti07@gmail.com" sx={{ color: '#fff', mb: 1 }}>
-                <EmailIcon fontSize="large" />
-              </IconButton>
-              <Typography variant="h6" gutterBottom>E-mail</Typography>
-              <Link href="mailto:Wesley.ti07@gmail.com" underline="hover" color="inherit">
-                Enviar e-mail
-              </Link>
-            </Paper>
-          </Grid>
+    <PageSection maxWidth="md">
+      <SectionHeader
+        className="animate-fade-in-up"
+        eyebrow="Contato"
+        title="Vamos conversar?"
+        subtitle="Fico à disposição para oportunidades, projetos e networking."
+        align="center"
+      />
 
-          <Grid item xs={12} md={4}>
-            <Paper elevation={0} sx={{ p: 4, background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(6px)', textAlign: 'center', borderRadius: 3 }}>
-              <IconButton href="https://www.linkedin.com/in/wesley-santos-515b73152/" target="_blank" rel="noopener" sx={{ color: '#0A66C2', mb: 1 }}>
-                <LinkedInIcon fontSize="large" />
-              </IconButton>
-              <Typography variant="h6" gutterBottom>LinkedIn</Typography>
-              <Link href="https://www.linkedin.com/in/wesley-santos-515b73152/" target="_blank" underline="hover" color="inherit">
-                Ver perfil
-              </Link>
-            </Paper>
-          </Grid>
+      <Grid container spacing={{ xs: 2, sm: 2.5, md: 3 }}>
+        {contactItems.map((item, index) => {
+          const Icon = item.icon;
+          const SecondaryIcon = item.secondary?.icon;
 
-          <Grid item xs={12} md={4}>
-            <Paper elevation={0} sx={{ p: 4, background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(6px)', textAlign: 'center', borderRadius: 3 }}>
-              <IconButton href="tel:+5511957620875" sx={{ color: '#fff', mb: 1 }}>
-                <PhoneIcon fontSize="large" />
-              </IconButton>
-              <IconButton href="https://wa.me/5511957620875" target="_blank" sx={{ color: '#25D366', ml: 1, mb: 1 }}>
-                <WhatsAppIcon fontSize="large" />
-              </IconButton>
-              <Typography variant="h6" gutterBottom>Telefone / WhatsApp</Typography>
-              <Typography variant="body1" gutterBottom>(11) 95762-0875</Typography>
-            </Paper>
-          </Grid>
+          return (
+            <Grid item xs={12} sm={6} key={item.id}>
+              <Paper
+                elevation={0}
+                className={index % 2 === 0 ? 'animate-fade-in-up-delay-1' : 'animate-fade-in-up-delay-2'}
+                sx={{
+                  p: { xs: 2.5, md: 3 },
+                  height: '100%',
+                  ...glassPanelSx,
+                  ...cardHoverSx,
+                  textAlign: 'center',
+                  '@media (hover: none)': {
+                    '&:hover': { transform: 'none' },
+                  },
+                }}
+              >
+                <Stack alignItems="center" spacing={1}>
+                  <IconButton
+                    href={item.href}
+                    {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
+                    aria-label={item.title}
+                    sx={{
+                      color: colors.accent,
+                      bgcolor: 'rgba(56, 189, 248, 0.1)',
+                      border: `1px solid rgba(56, 189, 248, 0.25)`,
+                      mb: 0.5,
+                      '&:hover': { bgcolor: 'rgba(56, 189, 248, 0.18)' },
+                    }}
+                  >
+                    <Icon fontSize="medium" />
+                  </IconButton>
+                  <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                    {item.title}
+                  </Typography>
+                  <Link
+                    href={item.href}
+                    {...(item.external && { target: '_blank', rel: 'noopener noreferrer' })}
+                    underline="hover"
+                    color="inherit"
+                    sx={{ color: 'text.secondary' }}
+                  >
+                    {item.label}
+                  </Link>
+                  {item.secondary && (
+                    <IconButton
+                      href={item.secondary.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={item.secondary.label}
+                      size="small"
+                      sx={{ color: colors.primaryLight }}
+                    >
+                      {SecondaryIcon && <SecondaryIcon fontSize="small" />}
+                    </IconButton>
+                  )}
+                </Stack>
+              </Paper>
+            </Grid>
+          );
+        })}
+      </Grid>
 
-          <Grid item xs={12}>
-            <Typography variant="body2" color="inherit" sx={{ opacity: 0.9, mt: 4 }}>
-              Endereço: Rua German Lorca, 1000, Apto 87A, São Paulo – SP, 05584-150
-              <br />E-mail: <a href="mailto:Wesley.ti07@gmail.com">Wesley.ti07@gmail.com</a>
-            </Typography>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
+      <Typography
+        variant="body2"
+        sx={{ color: 'text.secondary', mt: 4, textAlign: 'center' }}
+        className="animate-fade-in-up-delay-3"
+      >
+        São Paulo – SP
+      </Typography>
+    </PageSection>
   );
 };
 
