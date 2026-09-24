@@ -12,9 +12,10 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import DownloadIcon from '@mui/icons-material/Download';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { colors } from '../constants';
+import { colors, RESUME_URL, RESUME_FILENAME } from '../constants';
 
 const navItems = [
   { label: 'Home', path: '/' },
@@ -44,6 +45,15 @@ const linkStyle = ({ isActive }) => ({
     bgcolor: 'rgba(56, 189, 248, 0.12)',
   },
 });
+
+const resumeButtonSx = {
+  textTransform: 'none',
+  fontWeight: 600,
+  borderRadius: 999,
+  px: 2,
+  whiteSpace: 'nowrap',
+  flexShrink: 0,
+};
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -114,6 +124,18 @@ const Navbar = () => {
             ))}
           </Box>
 
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            href={RESUME_URL}
+            download={RESUME_FILENAME}
+            startIcon={<DownloadIcon />}
+            sx={{ ...resumeButtonSx, display: { xs: 'none', md: 'inline-flex' } }}
+          >
+            Currículo
+          </Button>
+
           <IconButton
             color="inherit"
             edge="end"
@@ -175,6 +197,18 @@ const Navbar = () => {
               />
             </ListItemButton>
           ))}
+          <Button
+            fullWidth
+            variant="contained"
+            color="primary"
+            href={RESUME_URL}
+            download={RESUME_FILENAME}
+            startIcon={<DownloadIcon />}
+            onClick={handleDrawerToggle}
+            sx={{ ...resumeButtonSx, mt: 2, py: 1.25 }}
+          >
+            Baixar Currículo
+          </Button>
         </List>
       </Drawer>
     </>

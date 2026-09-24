@@ -1,8 +1,9 @@
-import { Typography, Box, Grid, Card, CardContent } from '@mui/material';
+import { Typography, Box, Grid, Card, CardContent, Button } from '@mui/material';
+import DownloadIcon from '@mui/icons-material/Download';
 import PageSection from '../components/PageSection';
 import SectionHeader from '../components/SectionHeader';
 import CareerTimeline from '../components/CareerTimeline';
-import { glassCardSx } from '../constants';
+import { glassCardSx, RESUME_URL, RESUME_FILENAME } from '../constants';
 
 const education = [
   {
@@ -14,11 +15,14 @@ const education = [
 ];
 
 const courses = [
-  'Formação IA & Java – Alura (2025)',
-  'GPT e Java – Alura (2024)',
-  'AWS Cloud Practitioner – Alura (2023)',
-  'Banco de Dados Expert – Udemy (2020)',
-  'Java do Zero ao Profissional – Udemy (2020)',
+  'Formação Inteligência Artificial e Java – Alura (2025)',
+  'GPT e Java: integre uma aplicação com a OpenAI – Alura (2024)',
+  'AWS Certified Cloud Practitioner: Domínios 1 e 2 – Alura (2023)',
+  'PostgreSQL: Views, Subconsultas e Funções – Alura (2023)',
+  'PostgreSQL – Alura (2023)',
+  'Banco de Dados Expert: SQL e Administração – Udemy (2020)',
+  'Java do Zero ao Profissional + Projetos – Udemy (2020)',
+  'C# Completo – Programação Orientada a Objetos – Udemy',
 ];
 
 const About = () => {
@@ -28,7 +32,7 @@ const About = () => {
         className="animate-fade-in-up"
         eyebrow="Perfil"
         title="Sobre Mim"
-        subtitle="Desenvolvedor pleno com trajetória que une disciplina, empreendedorismo e engenharia de software."
+        subtitle="Desenvolvedor Full Stack Java Pleno com trajetória que une disciplina, empreendedorismo e engenharia de software."
       />
 
       <Grid container spacing={{ xs: 3, md: 4 }}>
@@ -36,14 +40,24 @@ const About = () => {
           <Card className="animate-fade-in-up-delay-1" sx={{ p: { xs: 2.5, sm: 3, md: 4 }, ...glassCardSx }}>
             <CardContent sx={{ p: { xs: 0, sm: '0 !important' } }}>
               <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Sou desenvolvedor de software pleno com experiência em criar soluções robustas e eficientes para backend e frontend. Tenho conhecimento sólido em Java e Spring Boot, além de familiaridade com JavaScript e Flutter.
+                Sou Desenvolvedor Full Stack Java Pleno, com sólida experiência em desenvolvimento, sustentação e evolução de sistemas corporativos. Atuo com Java (8 e 25), Spring Boot e PostgreSQL no backend, além de JavaScript, React e Flutter no frontend.
               </Typography>
               <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8, mt: 2 }}>
-                Com experiência em APIs REST e SOAP, PostgreSQL e SQL, desenvolvo aplicações escaláveis e de alto desempenho. Atuo no levantamento de requisitos, análise de negócios e resolução de problemas complexos.
+                Participo de todo o ciclo de vida das aplicações, do levantamento de requisitos à implantação em produção na AWS, com forte atuação em análise de regras de negócio, integração entre sistemas via APIs REST e SOAP e correção de problemas complexos.
               </Typography>
               <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8, mt: 2 }}>
-                Tenho vivência com Git, JQuery, Node.js e Jasper Reports. Recentemente explorei integrações com a API da OpenAI, mostrando minha busca constante por inovação.
+                Atualmente lidero um projeto interno, participando de decisões técnicas e orientando desenvolvedores menos experientes. Uso IA no dia a dia (Claude e Cursor) e tenho experiência com integrações com a API da OpenAI.
               </Typography>
+              <Button
+                variant="outlined"
+                color="inherit"
+                href={RESUME_URL}
+                download={RESUME_FILENAME}
+                startIcon={<DownloadIcon />}
+                sx={{ mt: 3, textTransform: 'none', fontWeight: 600 }}
+              >
+                Baixar currículo em PDF
+              </Button>
             </CardContent>
           </Card>
         </Grid>

@@ -1,7 +1,8 @@
 import { Grid, Typography, Button, Avatar, Box, Stack, Chip } from '@mui/material';
 import { Link } from 'react-router-dom';
+import DownloadIcon from '@mui/icons-material/Download';
 import PageSection from '../components/PageSection';
-import { colors } from '../constants';
+import { colors, RESUME_URL, RESUME_FILENAME } from '../constants';
 import { homeTechStack } from '../data/skills';
 
 const Home = () => {
@@ -11,7 +12,7 @@ const Home = () => {
         <Grid item xs={12} md={7} order={{ xs: 2, md: 1 }}>
           <Box className="animate-fade-in-up">
             <Chip
-              label="Disponível para novos projetos"
+              label="Aberto a novas oportunidades"
               size="small"
               sx={{
                 mb: 2,
@@ -38,14 +39,15 @@ const Home = () => {
               color="secondary"
               sx={{ fontSize: { xs: '1.05rem', md: '1.2rem' }, fontWeight: 600, mb: 2 }}
             >
-              Desenvolvedor Full Stack Pleno
+              Desenvolvedor Full Stack Java Pleno
             </Typography>
             <Typography
               variant="body1"
               sx={{ color: 'text.secondary', maxWidth: 560, mb: 3, lineHeight: 1.8 }}
             >
-              Especializado em Java, Spring Boot e APIs REST. Atuo desde o levantamento de requisitos
-              até deploy em AWS, com foco em qualidade, performance e liderança técnica.
+              Especializado em Java, Spring Boot, PostgreSQL e integrações REST/SOAP. Atuo desde o
+              levantamento de requisitos até o deploy em AWS, liderando um projeto interno com foco em
+              qualidade, performance e estabilidade.
             </Typography>
 
             <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mb: 3 }}>
@@ -78,8 +80,15 @@ const Home = () => {
             <Button variant="contained" color="primary" size="large" component={Link} to="/projetos">
               Ver Projetos
             </Button>
-            <Button variant="outlined" color="inherit" size="large" component={Link} to="/sobre">
-              Sobre Mim
+            <Button
+              variant="outlined"
+              color="inherit"
+              size="large"
+              href={RESUME_URL}
+              download={RESUME_FILENAME}
+              startIcon={<DownloadIcon />}
+            >
+              Baixar Currículo
             </Button>
           </Stack>
         </Grid>

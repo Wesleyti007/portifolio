@@ -20,6 +20,9 @@ export const colors = {
 
 export const PAGE_GRADIENT = colors.bgGradient;
 
+export const RESUME_URL = '/Wesley-da-Silva-Santos-Curriculo.pdf';
+export const RESUME_FILENAME = 'Wesley-da-Silva-Santos-Curriculo.pdf';
+
 export const categoryColors = {
   tech: '#38bdf8',
   entrepreneur: '#818cf8',

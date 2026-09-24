@@ -145,6 +145,31 @@ const CareerTimeline = () => {
                       ))}
                     </Box>
                   )}
+
+                  {item.technologies.length > 0 && (
+                    <Box sx={{ mt: 2 }}>
+                      <Typography
+                        variant="body2"
+                        sx={{ color: 'text.primary', fontWeight: 700, mb: 1 }}
+                      >
+                        Tecnologias utilizadas
+                      </Typography>
+                      <Stack direction="row" spacing={0.75} flexWrap="wrap" useFlexGap>
+                        {item.technologies.map((tech) => (
+                          <Chip
+                            key={tech}
+                            label={tech}
+                            size="small"
+                            sx={{
+                              bgcolor: colors.glass,
+                              color: 'text.primary',
+                              border: `1px solid ${colors.border}`,
+                            }}
+                          />
+                        ))}
+                      </Stack>
+                    </Box>
+                  )}
                 </Box>
               </Box>
             );
