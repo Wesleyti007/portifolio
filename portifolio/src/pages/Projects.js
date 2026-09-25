@@ -27,10 +27,10 @@ const projects = [
     id: 'bom-agendador',
     title: 'Bom Agendador',
     description:
-      'SaaS de agendamentos que co-fundei; lançado em 2019 e vendido em maio/2020.',
+      'Aplicação web e mobile para otimizar processos de agendamento de serviços, na qual atuei como desenvolvedor e co-fundador: análise de mercado, desenvolvimento técnico, validação do produto e negociação comercial. Lançada em 2019 e vendida em maio/2020.',
     image: '/bomagendador.png',
     demo: 'https://www.bomagendador.com.br/',
-    tags: ['SaaS', 'Empreendedorismo'],
+    tags: ['.NET', 'JavaScript', 'HTML', 'CSS'],
   },
 ];
 

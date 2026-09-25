@@ -96,13 +96,15 @@ export const careerTimeline = [
     id: 'bom-agendador',
     category: 'entrepreneur',
     period: 'Jan 2019 – Mai 2020',
-    title: 'Co-Fundador',
+    title: 'Desenvolvedor / Co-Fundador',
     company: 'Bom Agendador',
     location: 'São Paulo – SP',
     summary:
-      'Aplicação web e mobile para otimizar processos de agendamento de serviços. O projeto envolveu análise de mercado, desenvolvimento técnico, validação do produto e negociação comercial. Fundada em janeiro de 2019 e vendida para o empresário Marcos Andrade (Presidente da ABIESV, Diretor do CIESP e CEO da Expor Manequins) em maio de 2020.',
-    highlights: [],
-    technologies: [],
+      'Atuação na criação de aplicação web e desenvolvimento mobile para otimizar processos de agendamento de serviços. Responsável pela análise de mercado, desenvolvimento técnico, validação do produto e negociação comercial.',
+    highlights: [
+      'Fundada em janeiro de 2019 e vendida em maio de 2020 para o empresário Marcos Andrade (Presidente da ABIESV, Diretor do CIESP e CEO da Expor Manequins)',
+    ],
+    technologies: ['.NET', 'JavaScript', 'HTML', 'CSS'],
   },
   {
     id: 'exercito',
