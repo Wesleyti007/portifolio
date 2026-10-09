@@ -39,7 +39,7 @@ const Home = () => {
               color="secondary"
               sx={{ fontSize: { xs: '1.05rem', md: '1.2rem' }, fontWeight: 600, mb: 2 }}
             >
-              Desenvolvedor Full Stack Java Pleno
+              Desenvolvedor Full Stack Java
             </Typography>
             <Typography
               variant="body1"

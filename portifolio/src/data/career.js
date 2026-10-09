@@ -3,7 +3,7 @@ export const careerTimeline = [
     id: 'coinfo-pleno',
     category: 'tech',
     period: 'Abr 2025 – Atual',
-    title: 'Desenvolvedor Full Stack Java Pleno',
+    title: 'Desenvolvedor Full Stack Java',
     company: 'Coinfo Informática Ltda',
     location: 'São Paulo – SP',
     summary:

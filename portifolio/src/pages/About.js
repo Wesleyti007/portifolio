@@ -32,7 +32,7 @@ const About = () => {
         className="animate-fade-in-up"
         eyebrow="Perfil"
         title="Sobre Mim"
-        subtitle="Desenvolvedor Full Stack Java Pleno com trajetória que une disciplina, empreendedorismo e engenharia de software."
+        subtitle="Desenvolvedor Full Stack Java com trajetória que une disciplina, empreendedorismo e engenharia de software."
       />
 
       <Grid container spacing={{ xs: 3, md: 4 }}>
@@ -40,7 +40,7 @@ const About = () => {
           <Card className="animate-fade-in-up-delay-1" sx={{ p: { xs: 2.5, sm: 3, md: 4 }, ...glassCardSx }}>
             <CardContent sx={{ p: { xs: 0, sm: '0 !important' } }}>
               <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
-                Sou Desenvolvedor Full Stack Java Pleno, com sólida experiência em desenvolvimento, sustentação e evolução de sistemas corporativos. Atuo com Java (8 e 25), Spring Boot e PostgreSQL no backend, além de JavaScript, React e Flutter no frontend.
+                Sou Desenvolvedor Full Stack Java, com sólida experiência em desenvolvimento, sustentação e evolução de sistemas corporativos. Atuo com Java (8 e 25), Spring Boot e PostgreSQL no backend, além de JavaScript, React e Flutter no frontend.
               </Typography>
               <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.8, mt: 2 }}>
                 Participo de todo o ciclo de vida das aplicações, do levantamento de requisitos à implantação em produção na AWS, com forte atuação em análise de regras de negócio, integração entre sistemas via APIs REST e SOAP e correção de problemas complexos.
